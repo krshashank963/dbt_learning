@@ -1,0 +1,12 @@
+dbt_learning:
+  outputs:
+    dev:
+      catalog: dbt
+      host: dbc-6d356563-9017.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/4cd29640b071e5c6
+      schema: default
+      threads: 1
+      token: dapi59d00ee9e90af7e329bfd5b17d1b3b72
+      type: databricks
+      ignore_ssl_verification: true
+  target: dev

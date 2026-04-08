@@ -4,8 +4,19 @@ sources:
     schema: dbt_source  
     tables:
       - name: fact_sales
-      - name: fact_refunds
-      - name: fact_date
-      - name: dim_customers
-      - name: dim_products
-      - name: dim_orders
+        columns:
+          - name: sales_id
+            data_tests:
+              - unique
+              - not_null
+      - name: fact_returns
+      - name: dim_date
+      - name: dim_customer
+      - name: dim_product
+      - name: dim_store
+        columns:
+          - name: store_name
+            data_tests:
+              - accepted_values:
+                  values: ['MegaMart Manhattan', 'MegaMart Brooklyn', 'MegaMart Austin', 'MegaMart San Jose', 'MegaMart Toronto']
+      - name: diamonds

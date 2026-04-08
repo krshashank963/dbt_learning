@@ -31,12 +31,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_learning:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
     bronze:
-      +materialized: view
+      +materialized: table
+      +schema: bronze
     silver:
-      +materialized: view
+      +materialized: table
+      +schema: silver
     gold:
-      +materialized: view
+      +materialized: table
+      +schema: gold
